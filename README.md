@@ -1,1 +1,5 @@
-This is the source code to Jon Barron's public academic website: https://jonbarron.info/. Feel free to clone this code for your own personal use.
+# My personal webpage
+
+## Acknowledgement
+
+Thank [Jon Barron](https://jonbarron.github.io/) for sharing his website's source code.
