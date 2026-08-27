@@ -20,7 +20,7 @@
 		prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 	} catch (e2) {}
 	var theme =
-		stored === "light" || stored === "dark" ? stored : prefersDark ? "dark" : "light";
+		stored === "light" || stored === "dark" ? stored : "light";
 	html.setAttribute("data-theme", theme);
 })();
 //]]>
@@ -34,19 +34,22 @@
 <link rel="apple-touch-icon" href="images/photo.jpg" />
 </head>
 <body>
+<nav class="site-navbar" aria-label="Site">
+<div class="site-navbar-inner">
+<p class="site-navbar-links">
+<a href="index.html">Home</a><span class="nav-delimiter">&middot;</span>
+<a href="pub.html" class="current">Publications</a><span class="nav-delimiter">&middot;</span>
+<a href="blog.html">Blog</a><span class="nav-delimiter">&middot;</span>
+<a href="cv.html">CV</a>
+</p>
 <button type="button" id="theme-toggle" class="theme-toggle" aria-label="切换配色">
 <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
 <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
 </button>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">Hanxuan Li</div>
-<div class="menu-item"><a href="index.html">Home</a></div>
-<div class="menu-item"><a href="pub.html" class="current">Publications</a></div>
-<div class="menu-item"><a href="cv.html">CV</a></div>
-</td>
-<td id="layout-content">
+</div>
+</nav>
+<div class="content">
+<main id="layout-content">
 <div id="toptitle">
 <h1>Publications</h1>
 </div>
@@ -73,9 +76,8 @@ Kexuan Shi*, <b>Hanxuan Li</b>*, Zeju Qiu, Yandong Wen, Simon Buchholz, Weiyang 
 tl;dr: A spectrum-preserving optimizer that updates each weight matrix via left and right orthogonal transformations, keeping singular values fixed while modulating geometry; competitive for LLM pretraining and finetuning.</p>
 </td></tr></table>
 </div>
-</td>
-</tr>
-</table>
+</main>
+</div>
 <script type="text/javascript">
 //<![CDATA[
 (function () {
