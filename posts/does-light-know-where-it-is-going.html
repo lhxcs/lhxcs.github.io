@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="From Story of Your Life to the calculus of variations: Fermat’s principle, stationary action, and what it means to know the ending.">
+<meta name="color-scheme" content="light dark">
+<title>Does Light Know Where It Is Going? — Hanxuan Li</title>
+<script>
+(function () {
+  var theme = "light";
+  try { if (localStorage.getItem("site-theme") === "dark") theme = "dark"; } catch (error) {}
+  document.documentElement.dataset.theme = theme;
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Noto+Serif+SC:wght@400;600&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../jemdoc.css">
+<link rel="stylesheet" href="../blog.css">
+<link rel="icon" href="../images/photo.jpg" type="image/jpeg">
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../blog.js"></script>
+</head>
+<body id="top" class="journal-page essay-page" data-title-en="Does Light Know Where It Is Going? — Hanxuan Li" data-title-zh="光知道自己要去哪里吗？ — Hanxuan Li">
+<a class="skip-link" href="#main"><span data-lang="en" lang="en">Skip to content</span><span data-lang="zh-CN" lang="zh-CN" hidden>跳至正文</span></a>
+<nav class="site-navbar" aria-label="Site">
+  <div class="site-navbar-inner">
+    <div class="site-navbar-links"><a href="../index.html"><span data-lang="en" lang="en">Home</span><span data-lang="zh-CN" lang="zh-CN" hidden>首页</span></a>
+<a href="../pub.html"><span data-lang="en" lang="en">Publications</span><span data-lang="zh-CN" lang="zh-CN" hidden>论文</span></a>
+<a href="../blog.html" class="current" aria-current="page" data-article-link><span data-lang="en" lang="en">Blog</span><span data-lang="zh-CN" lang="zh-CN" hidden>博客</span></a>
+<a href="../cv.html"><span data-lang="en" lang="en">CV</span><span data-lang="zh-CN" lang="zh-CN" hidden>简历</span></a></div>
+    <div class="reading-controls">
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
+<svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+<svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+</button>
+    </div>
+  </div>
+</nav>
+<main id="main" class="journal-shell article-shell">
+<header class="article-header" data-lang="en" lang="en">
+  <a class="back-link" href="../blog.html" data-article-link>← All essays</a>
+  <p class="eyebrow">Physics &amp; literature</p>
+  <h1>Does Light Know Where It Is Going?</h1>
+  <p class="article-subtitle"><em>Story of Your Life</em> and the calculus of variations</p>
+  <div class="article-meta"><span class="author">Hanxuan Li</span><span aria-hidden="true">/</span><span>16 min read</span></div>
+</header>
+<header class="article-header" data-lang="zh-CN" lang="zh-CN" hidden>
+  <a class="back-link" href="../blog.html" data-article-link>← 全部文章</a>
+  <p class="eyebrow">物理与文学</p>
+  <h1>光知道自己要去哪里吗？</h1>
+  <p class="article-subtitle">从《你一生的故事》到变分法</p>
+  <div class="article-meta"><span class="author">Hanxuan Li</span><span aria-hidden="true">/</span><span>约 16 分钟</span></div>
+</header>
+<div class="article-layout">
+  <article class="article-body" data-lang="en" lang="en" aria-label="Does Light Know Where It Is Going?">
+<p data-passage="0">We usually understand a life in the order it is lived. We make a choice, live with its consequences, and revise our sense of who we are. Only afterward do we look back and ask whether we would take the same path again. In <em>Existentialism Is a Humanism</em>, Jean-Paul Sartre places choice at the center of human existence: we become who we are through what we do. <sup class="citation"><a id="cite-1" href="#ref-1" aria-label="Reference 1: Jean-Paul Sartre, Existentialism Is a Humanism">[1]</a></sup></p>
+<p data-passage="1">But reading Ted Chiang’s <em>Story of Your Life</em> left me wondering how much this view depends on the future remaining unknown. If we could see our lives all at once, including the joy and the grief still ahead, what would it mean to choose?</p>
+<p data-passage="3">Chiang approaches this question through language. His narrator, the linguist Louise Banks, learns to read the writing of the heptapods, whose sentences take the form of interconnected designs. Each part is arranged in relation to the whole; the very first stroke depends on how the entire sentence will fit together. To write this way, one seems to need the ending in mind before beginning.</p>
+<p data-passage="5">Their physics reflects this way of seeing. Variational principles, which describe a complete path through a condition on the whole, come naturally to the heptapods. To a human reader, this can sound almost teleological, as though events unfold in order to fulfill an ending. Where we tend to ask what earlier event caused the next one, they understand how each event belongs to the complete pattern. <sup class="citation"><a id="cite-2" href="#ref-2" aria-label="Reference 2: Ted Chiang, Story of Your Life">[2]</a></sup></p>
+<p data-passage="7">Chiang brings the difference into focus with Fermat’s principle. When light passes from air into water, it bends. We can describe that change with a rule relating the angles at the boundary, or consider the entire journey between two points and ask which path makes the travel time stationary. The second description seems to demand a strange kind of foresight: how can light set off in the right direction without knowing where it will arrive?</p>
+<p data-passage="9">The connection stayed with me after I finished the story. I wanted to understand how a condition on an entire journey could express the same law as a rule that holds at each point. Following that question leads into the calculus of variations, and eventually back to the question of what it means to see a life as a whole.</p>
+<p data-passage="11">To see how this works, let’s begin with a simpler question: why might a longer route take less time?</p>
+<h2 data-passage="12" id="refraction-en"><span aria-hidden="true" class="section-number">01</span>A longer path can take less time</h2>
+<p data-passage="13">Imagine moving through two regions at different speeds. Perhaps one has a smooth surface, while the other is difficult to cross. The shortest route in distance need not be the quickest route. A small detour through the faster region might save enough time to make it worthwhile.</p>
+<p data-passage="14">Light presents a similar problem. In the usual geometrical-optics setting, light travels at different speeds in different media. Fermat’s principle says that the actual ray between fixed endpoints has a <em>stationary</em> travel time: a small change in the path produces no first-order change in that time. In the simple refraction problem we are about to consider, the stationary path is also the fastest one. <sup class="citation"><a id="cite-3" href="#ref-3" aria-label="Reference 3: Feynman Lectures, Optics: The Principle of Least Time">[3]</a></sup></p>
+<p data-passage="15">Let us make this concrete. Suppose a horizontal boundary separates two media. The starting point is \(A=(0,a)\), above the boundary, and the destination is \(B=(d,-b)\), below it, where \(a,b,d&gt;0\). The light crosses the boundary at \(P=(u,0)\).</p><figure class="refraction-figure" data-passage="17">
+<svg aria-labelledby="ray-title-en ray-desc-en" role="img" viewbox="0 0 640 340">
+<title id="ray-title-en">A ray crossing between two media</title>
+<desc id="ray-desc-en">Light travels from A above a horizontal boundary through P on the boundary to B below it, bending toward the dashed normal in the slower medium.</desc>
+<path d="M32 170H608" fill="none" stroke="currentColor" stroke-opacity=".3"></path>
+<path class="figure-muted" d="M360 58V286" fill="none" stroke-dasharray="4 6"></path>
+<path d="M140 60 360 170 450 286" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+<path d="m241 102 9 13-16 1m169 98 2 14-13-6" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M360 129A41 41 0 0 0 323.3 151.7M360 210A40 40 0 0 0 384.5 201.6" fill="none" stroke="currentColor" stroke-opacity=".65"></path>
+<g fill="currentColor"><circle cx="140" cy="60" r="4"></circle><circle cx="360" cy="170" r="4"></circle><circle cx="450" cy="286" r="4"></circle></g>
+<text x="108" y="46">A (0, a)</text><text x="374" y="161">P (u, 0)</text><text x="462" y="305">B (d, −b)</text>
+<text x="330" y="118">θ₁</text><text x="374" y="231">θ₂</text>
+<text class="medium-label" x="43" y="147">MEDIUM 1 · v₁</text>
+<text class="medium-label" x="43" y="199">MEDIUM 2 · v₂ &lt; v₁</text>
+</svg>
+<figcaption>A change in the crossing point P changes both parts of the journey. The angles are measured from the normal.</figcaption>
+</figure>
+<p data-passage="18">Assume it travels in a straight line within each medium, at speeds \(v_1\) and \(v_2\). Its total travel time is</p>
+<div class="equation" data-passage="19">\[
+T(u)
+=
+\frac{\sqrt{u^2+a^2}}{v_1}
++
+\frac{\sqrt{(d-u)^2+b^2}}{v_2}.
+\]</div>
+<p data-passage="20">The first term is the time from \(A\) to \(P\); the second is the time from \(P\) to \(B\). Changing \(u\) changes the route.</p>
+<p data-passage="21">At the fastest route, moving the crossing point a little to the left or right cannot improve the travel time to first order. We therefore set</p>
+<div class="equation" data-passage="22">\[
+\frac{dT}{du}
+=
+\frac{u}{v_1\sqrt{u^2+a^2}}
+-
+\frac{d-u}{v_2\sqrt{(d-u)^2+b^2}}
+=
+0.
+\]</div>
+<p data-passage="23">The fractions involving distances are the sines of the angles that the two segments make with the normal to the boundary. Calling these angles \(\theta_1\) and \(\theta_2\), we obtain</p>
+<div class="equation" data-passage="24">\[
+\frac{\sin\theta_1}{v_1}
+=
+\frac{\sin\theta_2}{v_2}.
+\]</div>
+<p data-passage="25">Since the refractive index is \(n=c/v\), this becomes</p>
+<div class="equation" data-passage="26">\[
+\boxed{n_1\sin\theta_1=n_2\sin\theta_2.}
+\]</div>
+<p data-passage="27">This is Snell’s law. The calculation also gives the equation a geometric meaning. Moving the crossing point changes both parts of the journey. At the correct crossing point, the time gained on one part exactly balances the time lost on the other, to first order.</p>
+<p data-passage="29">We began with a statement about the complete route and obtained a rule about the angles at a single boundary.</p>
+<p data-passage="30">So far, however, we have only varied one number, \(u\). What happens when the whole curve is unknown?</p>
+<h2 data-passage="31" id="functionals-en"><span aria-hidden="true" class="section-number">02</span>From choosing a number to choosing a curve</h2>
+<p data-passage="32">Suppose we want to find the shortest curve joining two fixed points. Write the curve as \(y(x)\), with</p>
+<div class="equation" data-passage="33">\[
+y(x_0)=y_0,
+\qquad
+y(x_1)=y_1.
+\]</div>
+<p data-passage="34">A small segment of the curve has length \(ds=\sqrt{dx^2+dy^2}\), so the total length is</p>
+<div class="equation" data-passage="35">\[
+\mathcal J[y]
+=
+\int_{x_0}^{x_1}\sqrt{1+y'(x)^2}\,dx.
+\]</div>
+<p data-passage="36">This looks like an ordinary integral, but notice what we are allowed to change. We are not choosing a value of \(x\), nor asking where to stand on an existing curve. We are choosing the function \(y(x)\) itself.</p>
+<p data-passage="37">The expression \(\mathcal J\) takes an entire function as input and returns a number. Such an object is called a <strong>functional</strong>. The square brackets in \(\mathcal J[y]\) emphasize that its input is a function rather than a single numerical value.</p>
+<p data-passage="38">There is a useful way to make this less abstract. Imagine drawing the curve through a large number of adjustable points. Its shape is then specified by their heights,</p>
+<div class="equation" data-passage="39">\[
+(y_1,y_2,\ldots,y_N).
+\]</div>
+<p data-passage="40">Finding the shortest curve becomes an optimization problem over these \(N\) numbers. As the points become more closely spaced, the finite list approaches a continuous function.</p>
+<p data-passage="41">In this sense, the calculus of variations extends multivariable calculus from a finite set of adjustable numbers to an entire adjustable shape.</p>
+<p data-passage="42">The central question remains familiar: how does the quantity we care about change when we slightly change its input?</p>
+<h2 data-passage="43" id="variations-en"><span aria-hidden="true" class="section-number">03</span>What it means to vary a path</h2>
+<p data-passage="44">For an ordinary differentiable function \(f(z)\), a small change in its argument gives</p>
+<div class="equation" data-passage="45">\[
+f(z+\varepsilon)
+=
+f(z)+\varepsilon f'(z)+O(\varepsilon^2).
+\]</div>
+<p data-passage="46">At an interior minimum, \(f'(z)=0\). Otherwise, choosing the appropriate sign of \(\varepsilon\) would lower the function.</p>
+<p data-passage="47">To do the same thing with a curve, we need a way to describe a small deformation. We write</p>
+<div class="equation" data-passage="48">\[
+y_\varepsilon(x)=y(x)+\varepsilon\eta(x).
+\]</div>
+<p data-passage="49">Here, \(\eta(x)\) specifies the <em>shape</em> of the deformation, while \(\varepsilon\) controls its size. The deformation might lift the middle of the curve, lower a short section, or bend different regions in different directions.</p>
+<p data-passage="50">Because we want to keep the endpoints fixed, we require</p>
+<div class="equation" data-passage="51">\[
+\eta(x_0)=\eta(x_1)=0.
+\]</div>
+<p data-passage="52">It is worth pausing over the two different changes involved. Changing \(x\) moves us along a particular curve. Changing \(\varepsilon\) moves us from one curve to a neighboring curve. The derivative \(y'(x)\) describes the first kind of change; a variation describes the second.</p>
+<p data-passage="53">Once we choose \(\eta\), the expression \(\mathcal J[y+\varepsilon\eta]\) is just an ordinary function of the single number \(\varepsilon\). We can differentiate it:</p>
+<div class="equation" data-passage="54">\[
+\boxed{
+\delta\mathcal J[y;\eta]
+=
+\left.
+\frac{d}{d\varepsilon}
+\mathcal J[y+\varepsilon\eta]
+\right|_{\varepsilon=0}.
+}
+\]</div>
+<p data-passage="55">This is the <strong>first variation</strong> of \(\mathcal J\) in the direction \(\eta\).</p>
+<p data-passage="56">A curve \(y_*\) is stationary when</p>
+<div class="equation" data-passage="57">\[
+\boxed{
+\delta\mathcal J[y_*;\eta]=0
+\quad
+\text{for every allowed deformation }\eta.
+}
+\]</div>
+<p data-passage="58">The words “for every” matter. A curve is not stationary merely because one particular deformation leaves its value unchanged to first order. Every allowed direction must do so.</p>
+<p data-passage="59">Geometrically, this is the counterpart of a zero gradient. But the geometry now belongs to a space of curves: each point in this space represents a complete curve, and each direction represents a possible deformation.</p>
+<p data-passage="60">Stationarity does not mean that the curve itself is horizontal. It means that the functional has no first-order slope in any allowed direction.</p>
+<p data-passage="61">Nor does stationarity automatically mean a minimum. A zero gradient can also occur at a maximum or a saddle point. This is why “stationary action” is more precise than the familiar phrase “least action.”</p>
+<h2 data-passage="62" id="euler-lagrange-en"><span aria-hidden="true" class="section-number">04</span>How an equation for the whole becomes an equation at each point</h2>
+<p data-passage="63">We can now derive the main result. Consider a functional of the form</p>
+<div class="equation" data-passage="65">\[
+\mathcal J[y]
+=
+\int_{x_0}^{x_1}F(x,y(x),y'(x))\,dx.
+\]</div>
+<p data-passage="66">The function \(F\) assigns a local contribution based on the position \(x\), the value \(y\), and the slope \(y'\). The integral adds these contributions into a number associated with the whole curve.</p>
+<p data-passage="67">Assume that the functions are sufficiently smooth for the differentiations and integrations below. Substituting the deformed curve gives</p>
+<div class="equation" data-passage="68">\[
+\mathcal J[y+\varepsilon\eta]
+=
+\int_{x_0}^{x_1}
+F(x,y+\varepsilon\eta,y'+\varepsilon\eta')\,dx.
+\]</div>
+<p data-passage="69">Differentiating with respect to \(\varepsilon\), using the chain rule, yields</p>
+<div class="equation" data-passage="70">\[
+\delta\mathcal J[y;\eta]
+=
+\int_{x_0}^{x_1}
+\left(
+\frac{\partial F}{\partial y}\eta
++
+\frac{\partial F}{\partial y'}\eta'
+\right)dx.
+\]</div>
+<p data-passage="71">There are two terms because deforming the curve changes both its height and its slope.</p>
+<p data-passage="72">We would like to express everything in terms of \(\eta\). We cannot simply treat \(\eta\) and \(\eta'\) as independent choices: one is the derivative of the other. Integration by parts resolves this:</p>
+<div class="equation" data-passage="73">\[
+\int_{x_0}^{x_1}
+\frac{\partial F}{\partial y'}\eta'\,dx
+=
+\left[
+\frac{\partial F}{\partial y'}\eta
+\right]_{x_0}^{x_1}
+-
+\int_{x_0}^{x_1}
+\frac{d}{dx}
+\left(\frac{\partial F}{\partial y'}\right)
+\eta\,dx.
+\]</div>
+<p data-passage="74">The boundary term vanishes because \(\eta\) is zero at both endpoints. We are left with</p>
+<div class="equation" data-passage="75">\[
+\delta\mathcal J[y;\eta]
+=
+\int_{x_0}^{x_1}
+\left[
+\frac{\partial F}{\partial y}
+-
+\frac{d}{dx}
+\left(\frac{\partial F}{\partial y'}\right)
+\right]\eta(x)\,dx.
+\]</div>
+<p data-passage="76">Now comes the decisive step. Suppose the expression in brackets were positive around some point. We could choose a small, positive deformation supported only in that region. The integral would then be positive, contradicting stationarity. The same reasoning rules out a negative value.</p>
+<p data-passage="78">Since we can place such a deformation anywhere in the interior, the bracketed expression must vanish everywhere there:</p>
+<div class="equation" data-passage="79">\[
+\boxed{
+\frac{d}{dx}
+\left(\frac{\partial F}{\partial y'}\right)
+-
+\frac{\partial F}{\partial y}
+=
+0.
+}
+\]</div>
+<p data-passage="80">This is the <strong>Euler–Lagrange equation</strong>, the local condition associated with stationarity of this integral functional. <sup class="citation"><a id="cite-4" href="#ref-4" aria-label="Reference 4: MIT lecture notes on analytical mechanics">[4]</a></sup></p>
+<p data-passage="81">The derivation explains why a global statement can have local consequences. Requiring the integral to be stationary under <em>every</em> small deformation includes deformations concentrated in arbitrarily small regions. The whole cannot be stationary if one of its parts still admits a first-order change.</p>
+<p data-passage="82">For a quick check, return to the length functional, where \(F=\sqrt{1+y'^2}\). Since \(F\) does not depend explicitly on \(y\), the equation becomes</p>
+<div class="equation" data-passage="83">\[
+\frac{d}{dx}
+\left(\frac{y'}{\sqrt{1+y'^2}}\right)=0.
+\]</div>
+<p data-passage="84">The expression inside the derivative is constant, which means \(y'\) is constant. The curve is therefore a straight line, as expected.</p>
+<h2 data-passage="85" id="action-en"><span aria-hidden="true" class="section-number">05</span>From the shape of a curve to the motion of a particle</h2>
+<p data-passage="86">So far, we have developed a mathematical method. To use it in physics, we must specify the functional that describes the system.</p>
+<p data-passage="87">For a particle of constant mass \(m\), moving in one dimension under a potential \(V(q)\), define the Lagrangian as</p>
+<div class="equation" data-passage="88">\[
+L(q,\dot q)
+=
+\frac12m\dot q^2-V(q).
+\]</div>
+<p data-passage="89">It is the kinetic energy minus the potential energy. The corresponding functional is the <strong>action</strong>:</p>
+<div class="equation" data-passage="90">\[
+\boxed{
+S[q]
+=
+\int_{t_0}^{t_1}
+\left(\frac12m\dot q^2-V(q)\right)dt.
+}
+\]</div>
+<p data-passage="91">The input is now a complete motion \(q(t)\), including not only where the particle goes but when it reaches each position. Hamilton’s principle states that the physical trajectory makes this action stationary under variations that keep the positions at the two endpoint times fixed. <sup class="citation"><a id="cite-5" href="#ref-5" aria-label="Reference 5: Feynman Lectures, The Principle of Least Action">[5]</a></sup></p>
+<p data-passage="92">Action is not energy. It has units of energy multiplied by time, and stationarity of action is not a claim that a particle uses the least energy or travels in the shortest time. In this problem, the starting and finishing times are already fixed.</p>
+<p data-passage="93">We can apply the Euler–Lagrange equation by replacing the spatial variable \(x\) with time \(t\):</p>
+<div class="equation" data-passage="94">\[
+\frac{d}{dt}
+\left(\frac{\partial L}{\partial\dot q}\right)
+-
+\frac{\partial L}{\partial q}
+=
+0.
+\]</div>
+<p data-passage="95">For our Lagrangian,</p>
+<div class="equation" data-passage="96">\[
+\frac{\partial L}{\partial\dot q}=m\dot q,
+\qquad
+\frac{\partial L}{\partial q}=-V'(q).
+\]</div>
+<p data-passage="97">The result is</p>
+<div class="equation" data-passage="98">\[
+\boxed{m\ddot q=-V'(q).}
+\]</div>
+<p data-passage="99">The negative derivative of the potential is the force. We have recovered Newton’s second law.</p>
+<p data-passage="100">For this conservative mechanical system, the local equation of motion and the stationary-action description are two ways of expressing the same dynamics.</p>
+<p data-passage="101">There is an important distinction here. Calculus alone did not tell us to choose kinetic energy minus potential energy. That choice contains physical information. What we have derived is the relationship between that choice and the resulting motion.</p>
+<p data-passage="102">A variational principle is not the assertion that any attractive-looking objective will reproduce nature.</p>
+<h3 data-passage="103">A simple example: motion without a force</h3>
+<p data-passage="104">When \(V=0\), the action is</p>
+<div class="equation" data-passage="105">\[
+S[q]=\frac m2\int_{t_0}^{t_1}\dot q^2\,dt.
+\]</div>
+<p data-passage="106">The Euler–Lagrange equation says \(\ddot q=0\), so the stationary trajectory has constant velocity:</p>
+<div class="equation" data-passage="107">\[
+q_*(t)
+=
+q_0+
+\frac{q_1-q_0}{t_1-t_0}(t-t_0).
+\]</div>
+<p data-passage="108">We can also check directly what happens when we deform it. Let \(q=q_*+\varepsilon\eta\), with \(\eta\) zero at the endpoints. Expanding the square gives a cross term proportional to</p>
+<div class="equation" data-passage="109">\[
+\int_{t_0}^{t_1}\dot\eta\,dt
+=
+\eta(t_1)-\eta(t_0)
+=
+0.
+\]</div>
+<p data-passage="110">Consequently,</p>
+<div class="equation" data-passage="111">\[
+S[q_*+\varepsilon\eta]-S[q_*]
+=
+\frac{m\varepsilon^2}{2}
+\int_{t_0}^{t_1}\dot\eta^2\,dt
+\geq 0.
+\]</div>
+<p data-passage="112">In this example, the stationary trajectory really is a minimum. Any nonzero deformation increases the action, but only at second order in its size.</p>
+<p data-passage="113">This calculation also clarifies what the alternatives are. They are candidate motions satisfying the endpoint conditions, not necessarily motions that obey Newton’s law. We compare these possibilities to identify which ones satisfy the physical law; we do not assume that law before making the comparison.</p>
+<h2 data-passage="114" id="boundary-conditions-en"><span aria-hidden="true" class="section-number">06</span>Two ways of describing the same motion</h2>
+<p data-passage="115">We can now see why the physics that feels natural to the heptapods can seem so strange to us. The difference begins with how we pose the problem.</p>
+<p data-passage="116">In the local description of mechanics, we specify an initial position and velocity, then solve the equation of motion. In the variational description, we specify positions at two times and ask which connecting trajectories make the action stationary. These are different ways of posing a problem, but the equations we derived show how they are related.</p>
+<p data-passage="118">Imagine first solving the initial-value problem. The particle follows a trajectory and reaches some position at \(t_1\). Now take the two endpoints of that trajectory and compare it with neighboring paths between them. The trajectory you already found will satisfy the stationary-action condition. No information has traveled backward. We have described the same motion from a different perspective.</p>
+<p data-passage="120">Conversely, specifying two endpoint positions does not always guarantee a unique trajectory. Depending on the system and the boundary conditions, there may be several solutions or none. The variational formulation is not a general promise that a beginning and an ending determine one inevitable story.</p>
+<p data-passage="121">The key distinction is between a law and an account of how a system computes its behavior. An equation involving an entire trajectory does not imply that the particle evaluates every candidate trajectory before moving. Nor does \(\delta S=0\) mean that the particle performs gradient descent on its action. Stationarity characterizes the motion; it does not describe a search procedure. What looked like foresight arose because we confused a condition used in our description with information the physical object must possess.</p>
+<h2 data-passage="123" id="knowing-the-ending-en"><span aria-hidden="true" class="section-number">07</span>Knowing the ending</h2>
+<p data-passage="124">We can now return to the question we began with.</p>
+<p data-passage="125">Does light know where it is going?</p>
+<p data-passage="126">Nothing in the derivation requires it to. We have found two ways of describing a path. One follows the motion locally, relating what happens at a point to what happens nearby. The other considers the complete trajectory and asks what happens when we deform it.</p>
+<p data-passage="127">Under the assumptions we have used, the stationary-action condition and the local equation of motion express the same dynamics:</p>
+<div class="equation" data-passage="128">\[
+\delta S[q]=0
+\qquad\Longleftrightarrow\qquad
+\frac{d}{dt}\left(\frac{\partial L}{\partial\dot q}\right)
+-
+\frac{\partial L}{\partial q}
+=0.
+\]</div>
+<p data-passage="129">The endpoint has not sent a message backward in time. We have changed the way we describe the motion, not the direction in which the particle moves.</p>
+<p data-passage="130">There is also something important in what this equation does <em>not</em> say.</p>
+<p data-passage="131">The familiar phrase “least action” encourages us to imagine nature finding the best possible route. But the condition we derived was stationarity: a small, allowed deformation produces no first-order change in the action. Even when the action is a minimum, the comparison concerns a particular quantity, defined by the system we are studying. Calling a path “best” already assumes that we know what to measure.</p>
+<p data-passage="132">That question becomes less straightforward when we return to Chiang’s story. We often look back on our own lives by imagining alternatives: a different choice, another direction, a different ending. In the calculation, we could compare paths because we had a quantity to evaluate. What would it mean to make that comparison for a life?</p>
+<p data-passage="134">For Louise, knowing the shape of her life does not supply a calculation that tells her whether it is worth living. There is no given functional that assigns the right weights to everything she will love and everything she will lose.</p>
+<p data-passage="134a">Even where the action is minimized, it is not a measure of happiness, suffering, or the worth of a journey. The mathematics gives us no reason to call a minimum fortunate, or a maximum tragic.</p>
+<p data-passage="135">Yet the distinction between seeing a whole and moving through its parts remains.</p>
+<p data-passage="136">From outside, a trajectory can be represented by a single curve. From within, there is still the passage from one moment to the next. Seeing the destination does not make the intervening points disappear. Knowing that something will end does not mean it has already been experienced.</p>
+<p data-passage="137">The story holds these two perspectives together without making either one comfortable. Louise knows, and she chooses. The choice does not remove the pain she foresees; the pain does not erase the joy.</p>
+<p data-passage="138">Perhaps that is why the language of a variational principle feels so at home here. It lets us ask about the shape of an entire life without pretending that the answer must be a better outcome, a shorter route, or a smaller loss.</p>
+<p data-passage="139">The mathematical question has become a personal one, and the derivation can take us no further:</p>
+<blockquote data-passage="140">
+<p>From the beginning I knew my destination, and I chose my route accordingly. But am I working toward an extreme of joy, or of pain? Will I achieve a minimum, or a maximum?</p>
+</blockquote>
+  <div class="article-end" aria-hidden="true">· · ·</div>
+  <section class="article-references" aria-labelledby="references-en" role="doc-bibliography">
+    <h2 id="references-en">References</h2>
+    <ol>
+      <li id="ref-1">Jean-Paul Sartre. <a href="https://yalebooks.yale.edu/book/9780300115468/existentialism-is-a-humanism/"><em>Existentialism Is a Humanism</em></a>. Translated by Carol Macomber. Yale University Press, 2007.
+        <span class="reference-note">On choice, responsibility, and becoming who we are through our actions.</span>
+        <a class="reference-backlink" href="#cite-1" aria-label="Back to reference 1 in the essay">↩</a>
+      </li>
+      <li id="ref-2">Ted Chiang. “Story of Your Life.” In <a href="https://www.penguinrandomhouse.com/books/538163/stories-of-your-life-and-others-by-ted-chiang/"><em>Stories of Your Life and Others</em></a>. Vintage, 2016 edition.
+        <span class="reference-note">The story that prompted this essay.</span>
+        <a class="reference-backlink" href="#cite-2" aria-label="Back to reference 2 in the essay">↩</a>
+      </li>
+      <li id="ref-3">Richard P. Feynman, Robert B. Leighton, and Matthew Sands. <a href="https://www.feynmanlectures.caltech.edu/I_26.html">“Optics: The Principle of Least Time.”</a> <em>The Feynman Lectures on Physics</em>, Vol. I, Chapter 26. Caltech online edition.
+        <span class="reference-note">Fermat’s principle and its connection to refraction.</span>
+        <a class="reference-backlink" href="#cite-3" aria-label="Back to reference 3 in the essay">↩</a>
+      </li>
+      <li id="ref-4">Iain Stewart. <a href="https://ocw.mit.edu/courses/8-09-classical-mechanics-iii-fall-2014/resources/mit8_09f14_chapter_1/">“A Review of Analytical Mechanics.”</a> <em>8.09 Classical Mechanics III</em>, Chapter 1. MIT OpenCourseWare, Fall 2014.
+        <span class="reference-note">Further mathematical detail on variational principles and Lagrangian mechanics.</span>
+        <a class="reference-backlink" href="#cite-4" aria-label="Back to reference 4 in the essay">↩</a>
+      </li>
+      <li id="ref-5">Richard P. Feynman, Robert B. Leighton, and Matthew Sands. <a href="https://www.feynmanlectures.caltech.edu/II_19.html">“The Principle of Least Action.”</a> <em>The Feynman Lectures on Physics</em>, Vol. II, Chapter 19. Caltech online edition.
+        <span class="reference-note">Stationary action, Newton’s law, and why “least” need not mean a minimum.</span>
+        <a class="reference-backlink" href="#cite-5" aria-label="Back to reference 5 in the essay">↩</a>
+      </li>
+    </ol>
+  </section>
+
+  </article>
+  <article class="article-body" data-lang="zh-CN" lang="zh-CN" aria-label="光知道自己要去哪里吗？" hidden>
+<p data-passage="0">我们通常按照经历的顺序来理解人生。一件事发生，接着是另一件事。做出选择时，我们并不知道它会带来怎样的全部后果。只有事后回望，我们才为这段经历勾勒出一个形状。</p>
+<p data-passage="1">特德·姜的《你一生的故事》让我们想象另一种与时间相处的方式：还没有走完一生，就已经看见了它的全貌。这个故事令人不安的问题，并不只是我们能否知道未来，而是：如果选择的后果早已知晓，选择本身又意味着什么？</p>
+<p data-passage="2">知道结局，会改变我们开始的方式吗？</p>
+<p data-passage="3">故事从语言切入这个问题。语言学家露易丝·班克斯接触到了七肢桶的文字。它们的句子并非只是依次排列的词语，而是相互联结的图案，每一部分都依据整体来安排。落在开头的一笔，可能取决于在人类的句子里直到结尾才会出现的东西。</p>
+<p data-passage="4">要这样书写，似乎就必须在落下第一笔之前，把完整的表达放在心里。</p>
+<p data-passage="5">姜把这种陌生的书写方式，与一种同样陌生的自然描述联系起来。光从空气进入水中时，会发生偏折。我们可以用一条局部规则来解释：给定入射方向和两种介质，就能算出出射方向。但我们也可以退后一步，考察整个旅程。在连接起点与终点的邻近路径中，实际的光路使传播时间取驻定值。</p>
+<p data-passage="6">这就是费马原理。</p>
+<p data-passage="7">乍看之下，光仿佛面临着和七肢桶书写者一样的问题。如果不知道最终会抵达哪里，它怎么能一开始就选对方向？一个涉及整个旅程的条件，又如何决定沿途发生的事情？</p>
+<p data-passage="8">光并不需要预知自己的抵达。这两种描述，原来表达的是同一条定律。但这种等价值得细究，因为它改变了我们对「解释」的想象。</p>
+<p data-passage="9">解释不一定总要从当下出发，再向未来推进。有时，我们可以描述一条完整的路径，考察它如何响应微小的改变，再从中得到每一点都遵循的规则。</p>
+<p data-passage="10">这就是变分法背后的想法。</p>
+<p data-passage="11">要理解它，我们不妨从一个更简单的问题开始：为什么更长的路，反而可能花更少的时间？</p>
+<h2 data-passage="12" id="refraction-zh-CN"><span aria-hidden="true" class="section-number">01</span>更长的路，也可能更快</h2>
+<p data-passage="13">想象你要穿过两个区域，而在其中行进的速度并不相同。一个区域路面平整，另一个却难以通行。距离最短的路线，不一定是用时最少的路线。在更快的区域里稍微绕一点路，也许就能省下足够的时间，让这段绕行变得值得。</p>
+<p data-passage="14">光也面临类似的问题。在通常的几何光学情形下，光在不同介质中的传播速度不同。费马原理说，固定端点之间的实际光路，其传播时间是<em>驻定</em>的：对路径作微小改变，传播时间的一阶变化为零。在下面这个简单的折射问题中，驻定路径也恰好是最快的路径。</p>
+<p data-passage="15">让我们把问题写得具体一些。</p>
+<p data-passage="16">假设一条水平分界线将两种介质隔开。起点是分界线上方的 \(A=(0,a)\)，终点是下方的 \(B=(d,-b)\)，其中 \(a,b,d&gt;0\)。光在 \(P=(u,0)\) 处穿过分界线。</p><figure class="refraction-figure" data-passage="17">
+<svg aria-labelledby="ray-title-zh-CN ray-desc-zh-CN" role="img" viewbox="0 0 640 340">
+<title id="ray-title-zh-CN">穿过两种介质的光路</title>
+<desc id="ray-desc-zh-CN">光从水平分界线上方的 A 点出发，经过分界线上的 P 点，到达下方的 B 点，在较慢的介质中向虚线表示的法线偏折。</desc>
+<path d="M32 170H608" fill="none" stroke="currentColor" stroke-opacity=".3"></path>
+<path class="figure-muted" d="M360 58V286" fill="none" stroke-dasharray="4 6"></path>
+<path d="M140 60 360 170 450 286" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+<path d="m241 102 9 13-16 1m169 98 2 14-13-6" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M360 129A41 41 0 0 0 323.3 151.7M360 210A40 40 0 0 0 384.5 201.6" fill="none" stroke="currentColor" stroke-opacity=".65"></path>
+<g fill="currentColor"><circle cx="140" cy="60" r="4"></circle><circle cx="360" cy="170" r="4"></circle><circle cx="450" cy="286" r="4"></circle></g>
+<text x="108" y="46">A (0, a)</text><text x="374" y="161">P (u, 0)</text><text x="462" y="305">B (d, −b)</text>
+<text x="330" y="118">θ₁</text><text x="374" y="231">θ₂</text>
+<text class="medium-label" x="43" y="147">介质 1 · v₁</text>
+<text class="medium-label" x="43" y="199">介质 2 · v₂ &lt; v₁</text>
+</svg>
+<figcaption>移动交点 P，会同时改变旅程的两部分。两个角度均相对于法线测量。</figcaption>
+</figure>
+<p data-passage="18">假设光在每种介质中都沿直线传播，速度分别为 \(v_1\) 和 \(v_2\)。总传播时间为</p>
+<div class="equation" data-passage="19">\[
+T(u)
+=
+\frac{\sqrt{u^2+a^2}}{v_1}
++
+\frac{\sqrt{(d-u)^2+b^2}}{v_2}.
+\]</div>
+<p data-passage="20">第一项是从 \(A\) 到 \(P\) 的时间，第二项是从 \(P\) 到 \(B\) 的时间。改变 \(u\)，就改变了路线。</p>
+<p data-passage="21">在最快的路线上，把交点略微向左或向右移动，都不能在一阶上缩短传播时间。因此我们令</p>
+<div class="equation" data-passage="22">\[
+\frac{dT}{du}
+=
+\frac{u}{v_1\sqrt{u^2+a^2}}
+-
+\frac{d-u}{v_2\sqrt{(d-u)^2+b^2}}
+=
+0.
+\]</div>
+<p data-passage="23">式中由距离构成的比值，就是两段光路与分界线法线夹角的正弦。将这两个角记作 \(\theta_1\) 和 \(\theta_2\)，就得到</p>
+<div class="equation" data-passage="24">\[
+\frac{\sin\theta_1}{v_1}
+=
+\frac{\sin\theta_2}{v_2}.
+\]</div>
+<p data-passage="25">由于折射率 \(n=c/v\)，上式可以写成</p>
+<div class="equation" data-passage="26">\[
+\boxed{n_1\sin\theta_1=n_2\sin\theta_2.}
+\]</div>
+<p data-passage="27">这就是斯涅尔定律。</p>
+<p data-passage="28">这个计算也赋予了方程一个几何含义。移动交点，会同时改变旅程的两部分。在正确的交点处，一段路程节省的时间，恰好在一阶上抵消另一段路程增加的时间。</p>
+<p data-passage="29">我们从一个关于整条路线的陈述出发，得到了一个关于单处分界面上角度的规则。</p>
+<p data-passage="30">不过，到目前为止，我们只改变了一个数 \(u\)。如果未知的是整条曲线，又该怎么办？</p>
+<h2 data-passage="31" id="functionals-zh-CN"><span aria-hidden="true" class="section-number">02</span>从选择一个数，到选择一条曲线</h2>
+<p data-passage="32">假设我们想找出连接两个固定点的最短曲线。将曲线写成 \(y(x)\)，并要求</p>
+<div class="equation" data-passage="33">\[
+y(x_0)=y_0,
+\qquad
+y(x_1)=y_1.
+\]</div>
+<p data-passage="34">曲线上的一小段长度为 \(ds=\sqrt{dx^2+dy^2}\)，因此总长度为</p>
+<div class="equation" data-passage="35">\[
+\mathcal J[y]
+=
+\int_{x_0}^{x_1}\sqrt{1+y'(x)^2}\,dx.
+\]</div>
+<p data-passage="36">这看起来只是一个普通积分，但请留意我们可以改变的对象。我们不是在选择某个 \(x\) 值，也不是在问应该站在一条既定曲线的哪个位置。我们要选择的，是函数 \(y(x)\) 本身。</p>
+<p data-passage="37">表达式 \(\mathcal J\) 接受一整个函数作为输入，并返回一个数。这样的对象叫作<strong>泛函</strong>。\(\mathcal J[y]\) 中的方括号，强调了它的输入是一个函数，而不是单个数值。</p>
+<p data-passage="38">有一种方式能让它不那么抽象。想象我们用大量可调节的点画出曲线，那么曲线的形状就由这些点的高度决定：</p>
+<div class="equation" data-passage="39">\[
+(y_1,y_2,\ldots,y_N).
+\]</div>
+<p data-passage="40">寻找最短曲线，就变成了对这 \(N\) 个数的优化问题。当这些点排列得越来越密，有限的数列便逐渐趋近于一个连续函数。</p>
+<p data-passage="41">从这个意义上说，变分法把多元微积分从有限个可调节的数，推广到了一整个可调节的形状。</p>
+<p data-passage="42">核心问题依旧熟悉：当输入发生微小改变时，我们关心的量会怎样变化？</p>
+<h2 data-passage="43" id="variations-zh-CN"><span aria-hidden="true" class="section-number">03</span>改变一条路径，究竟是什么意思</h2>
+<p data-passage="44">对于普通的可微函数 \(f(z)\)，自变量的一个微小改变量给出</p>
+<div class="equation" data-passage="45">\[
+f(z+\varepsilon)
+=
+f(z)+\varepsilon f'(z)+O(\varepsilon^2).
+\]</div>
+<p data-passage="46">在内部极小值点，\(f'(z)=0\)。否则，总能选择合适的 \(\varepsilon\) 符号，使函数值进一步减小。</p>
+<p data-passage="47">要对曲线做同样的事，我们需要一种描述微小形变的方式。写成</p>
+<div class="equation" data-passage="48">\[
+y_\varepsilon(x)=y(x)+\varepsilon\eta(x).
+\]</div>
+<p data-passage="49">这里，\(\eta(x)\) 决定形变的<em>形状</em>，而 \(\varepsilon\) 控制它的大小。这种形变可以抬高曲线中部，压低一小段，也可以让不同区域向不同方向弯曲。</p>
+<p data-passage="50">由于我们希望保持端点不变，所以要求</p>
+<div class="equation" data-passage="51">\[
+\eta(x_0)=\eta(x_1)=0.
+\]</div>
+<p data-passage="52">这里有两种不同的变化，值得停下来分辨。改变 \(x\)，是在某条既定的曲线上移动；改变 \(\varepsilon\)，则是从一条曲线移向另一条邻近曲线。导数 \(y'(x)\) 描述第一种变化，变分描述第二种。</p>
+<p data-passage="53">一旦选定 \(\eta\)，表达式 \(\mathcal J[y+\varepsilon\eta]\) 就只是关于单个数 \(\varepsilon\) 的普通函数。我们可以对它求导：</p>
+<div class="equation" data-passage="54">\[
+\boxed{
+\delta\mathcal J[y;\eta]
+=
+\left.
+\frac{d}{d\varepsilon}
+\mathcal J[y+\varepsilon\eta]
+\right|_{\varepsilon=0}.
+}
+\]</div>
+<p data-passage="55">这就是 \(\mathcal J\) 沿 \(\eta\) 方向的<strong>一阶变分</strong>。</p>
+<p data-passage="56">当一条曲线 \(y_*\) 满足下面的条件时，我们称它是驻定的：</p>
+<div class="equation" data-passage="57">\[
+\boxed{
+\delta\mathcal J[y_*;\eta]=0
+\quad
+\text{对每一种允许的形变 }\eta.
+}
+\]</div>
+<p data-passage="58">「每一种」这几个字很关键。某个特定形变使泛函的一阶变化为零，并不足以让一条曲线成为驻定曲线。每一个允许的方向，都必须如此。</p>
+<p data-passage="59">从几何上看，这对应于梯度为零。但此时的几何发生在一个曲线空间里：空间中的每个点代表一整条曲线，每个方向代表一种可能的形变。</p>
+<p data-passage="60">驻定并不意味着曲线本身是水平的。它意味着泛函在任何允许的方向上，都没有一阶斜率。</p>
+<p data-passage="61">驻定也并不自动意味着最小值。梯度为零的地方，也可能是极大值或鞍点。因此，相比常见的「最小作用量」，「驻定作用量」是更准确的说法。</p>
+<h2 data-passage="62" id="euler-lagrange-zh-CN"><span aria-hidden="true" class="section-number">04</span>关于整体的条件，如何成为每一点的方程</h2>
+<p data-passage="63">现在，我们可以推导最主要的结果了。</p>
+<p data-passage="64">考虑以下形式的泛函：</p>
+<div class="equation" data-passage="65">\[
+\mathcal J[y]
+=
+\int_{x_0}^{x_1}F(x,y(x),y'(x))\,dx.
+\]</div>
+<p data-passage="66">函数 \(F\) 根据位置 \(x\)、函数值 \(y\) 和斜率 \(y'\) 给出局部贡献。积分把这些贡献加起来，得到一个与整条曲线相关的数。</p>
+<p data-passage="67">假设各个函数足够光滑，使下面的求导与积分操作成立。代入变形后的曲线，得到</p>
+<div class="equation" data-passage="68">\[
+\mathcal J[y+\varepsilon\eta]
+=
+\int_{x_0}^{x_1}
+F(x,y+\varepsilon\eta,y'+\varepsilon\eta')\,dx.
+\]</div>
+<p data-passage="69">对 \(\varepsilon\) 求导，并使用链式法则，便有</p>
+<div class="equation" data-passage="70">\[
+\delta\mathcal J[y;\eta]
+=
+\int_{x_0}^{x_1}
+\left(
+\frac{\partial F}{\partial y}\eta
++
+\frac{\partial F}{\partial y'}\eta'
+\right)dx.
+\]</div>
+<p data-passage="71">这里有两项，是因为曲线的形变同时改变了它的高度与斜率。</p>
+<p data-passage="72">我们希望将一切都写成关于 \(\eta\) 的表达式。不能直接把 \(\eta\) 和 \(\eta'\) 当作彼此独立的选择，因为后者是前者的导数。分部积分解决了这个问题：</p>
+<div class="equation" data-passage="73">\[
+\int_{x_0}^{x_1}
+\frac{\partial F}{\partial y'}\eta'\,dx
+=
+\left[
+\frac{\partial F}{\partial y'}\eta
+\right]_{x_0}^{x_1}
+-
+\int_{x_0}^{x_1}
+\frac{d}{dx}
+\left(\frac{\partial F}{\partial y'}\right)
+\eta\,dx.
+\]</div>
+<p data-passage="74">由于 \(\eta\) 在两个端点都为零，边界项消失。剩下的是</p>
+<div class="equation" data-passage="75">\[
+\delta\mathcal J[y;\eta]
+=
+\int_{x_0}^{x_1}
+\left[
+\frac{\partial F}{\partial y}
+-
+\frac{d}{dx}
+\left(\frac{\partial F}{\partial y'}\right)
+\right]\eta(x)\,dx.
+\]</div>
+<p data-passage="76">现在到了关键的一步。</p>
+<p data-passage="77">假设方括号里的表达式在某一点附近为正。我们就可以选择一个只在该区域内非零的小的正形变。这样，积分便为正，与驻定条件矛盾。同样的推理也排除了负值。</p>
+<p data-passage="78">既然我们可以把这样的形变放在区间内部的任意位置，方括号里的表达式就必须在内部处处为零：</p>
+<div class="equation" data-passage="79">\[
+\boxed{
+\frac{d}{dx}
+\left(\frac{\partial F}{\partial y'}\right)
+-
+\frac{\partial F}{\partial y}
+=
+0.
+}
+\]</div>
+<p data-passage="80">这就是<strong>欧拉—拉格朗日方程</strong>，与这个积分泛函的驻定性相对应的局部条件。</p>
+<p data-passage="81">这个推导解释了为什么整体条件会产生局部结论。要求积分在<em>每一种</em>微小形变下都驻定，就包含了那些集中在任意小区域中的形变。如果某一部分仍然允许产生一阶变化，整体就不可能驻定。</p>
+<p data-passage="82">我们可以快速检验一下。回到长度泛函，此时 \(F=\sqrt{1+y'^2}\)。由于 \(F\) 不显含 \(y\)，方程变为</p>
+<div class="equation" data-passage="83">\[
+\frac{d}{dx}
+\left(\frac{y'}{\sqrt{1+y'^2}}\right)=0.
+\]</div>
+<p data-passage="84">导数里的表达式是常数，这意味着 \(y'\) 是常数。因此，曲线是一条直线，正如我们所预期的那样。</p>
+<h2 data-passage="85" id="action-zh-CN"><span aria-hidden="true" class="section-number">05</span>从曲线的形状，到粒子的运动</h2>
+<p data-passage="86">到目前为止，我们建立的是一种数学方法。要把它用于物理，还必须指定描述系统的泛函。</p>
+<p data-passage="87">对于一个质量恒为 \(m\)、在势能 \(V(q)\) 下做一维运动的粒子，定义拉格朗日量为</p>
+<div class="equation" data-passage="88">\[
+L(q,\dot q)
+=
+\frac12m\dot q^2-V(q).
+\]</div>
+<p data-passage="89">它等于动能减去势能。相应的泛函就是<strong>作用量</strong>：</p>
+<div class="equation" data-passage="90">\[
+\boxed{
+S[q]
+=
+\int_{t_0}^{t_1}
+\left(\frac12m\dot q^2-V(q)\right)dt.
+}
+\]</div>
+<p data-passage="91">现在的输入是一段完整的运动 \(q(t)\)，它不仅包括粒子去了哪里，还包括粒子在什么时刻到达每个位置。哈密顿原理指出，在保持两个端点时刻的位置不变的变分下，真实的运动轨迹使这个作用量驻定。</p>
+<p data-passage="92">作用量不是能量。它的量纲是能量乘以时间。作用量驻定，也不是说粒子消耗最少的能量，或者花费最短的时间。在这个问题中，开始和结束的时刻已经固定了。</p>
+<p data-passage="93">把空间变量 \(x\) 换成时间 \(t\)，就可以应用欧拉—拉格朗日方程：</p>
+<div class="equation" data-passage="94">\[
+\frac{d}{dt}
+\left(\frac{\partial L}{\partial\dot q}\right)
+-
+\frac{\partial L}{\partial q}
+=
+0.
+\]</div>
+<p data-passage="95">对于我们选取的拉格朗日量，</p>
+<div class="equation" data-passage="96">\[
+\frac{\partial L}{\partial\dot q}=m\dot q,
+\qquad
+\frac{\partial L}{\partial q}=-V'(q).
+\]</div>
+<p data-passage="97">因此得到</p>
+<div class="equation" data-passage="98">\[
+\boxed{m\ddot q=-V'(q).}
+\]</div>
+<p data-passage="99">势能对位置的负导数就是力。我们重新得到了牛顿第二定律。</p>
+<p data-passage="100">对于这个保守力学系统，局部运动方程与驻定作用量描述，是表达同一种动力学的两种方式。</p>
+<p data-passage="101">这里有一个重要的区别。微积分本身并没有告诉我们，应该选择「动能减去势能」。这个选择包含了物理信息。我们所推导出的，是这一选择与相应运动之间的关系。</p>
+<p data-passage="102">变分原理并不是说，任何看起来漂亮的目标函数，都能重现自然规律。</p>
+<h3 data-passage="103">一个简单的例子：不受力的运动</h3>
+<p data-passage="104">当 \(V=0\) 时，作用量为</p>
+<div class="equation" data-passage="105">\[
+S[q]=\frac m2\int_{t_0}^{t_1}\dot q^2\,dt.
+\]</div>
+<p data-passage="106">欧拉—拉格朗日方程给出 \(\ddot q=0\)，因此驻定轨迹具有恒定的速度：</p>
+<div class="equation" data-passage="107">\[
+q_*(t)
+=
+q_0+
+\frac{q_1-q_0}{t_1-t_0}(t-t_0).
+\]</div>
+<p data-passage="108">我们也可以直接检验，对它施加形变时会发生什么。令 \(q=q_*+\varepsilon\eta\)，其中 \(\eta\) 在端点为零。展开平方后，交叉项正比于</p>
+<div class="equation" data-passage="109">\[
+\int_{t_0}^{t_1}\dot\eta\,dt
+=
+\eta(t_1)-\eta(t_0)
+=
+0.
+\]</div>
+<p data-passage="110">于是，</p>
+<div class="equation" data-passage="111">\[
+S[q_*+\varepsilon\eta]-S[q_*]
+=
+\frac{m\varepsilon^2}{2}
+\int_{t_0}^{t_1}\dot\eta^2\,dt
+\geq 0.
+\]</div>
+<p data-passage="112">在这个例子中，驻定轨迹确实对应最小值。任何非零形变都会增大作用量，但这种增加只从形变大小的二阶开始。</p>
+<p data-passage="113">这个计算也澄清了我们在比较什么：那些替代路径，是满足端点条件的候选运动，不一定服从牛顿定律。我们通过比较这些可能性，识别出哪些运动满足物理定律，而不是在比较之前就假定它们已经服从定律。</p>
+<h2 data-passage="114" id="boundary-conditions-zh-CN"><span aria-hidden="true" class="section-number">06</span>终点是边界条件，不是未来传来的消息</h2>
+<p data-passage="115">现在，我们可以回到那个让费马原理显得神秘的问题。</p>
+<p data-passage="116">在力学的局部描述中，我们指定初始位置和速度，然后求解运动方程。在变分描述中，我们指定两个时刻的位置，再问：连接它们的哪些轨迹会使作用量驻定？</p>
+<p data-passage="117">这是提出问题的不同方式，而刚才推导的方程说明了它们之间的联系。</p>
+<p data-passage="118">想象我们先求解初值问题。粒子沿着某条轨迹运动，在 \(t_1\) 时到达某个位置。现在，取出这条轨迹的两个端点，把它与连接相同端点的邻近路径作比较。我们已经求得的那条轨迹，就会满足作用量驻定的条件。</p>
+<p data-passage="119">没有信息向过去传播。我们只是从另一个角度描述同一段运动。</p>
+<p data-passage="120">反过来，指定两个端点的位置，也并不总能保证得到唯一轨迹。视系统和边界条件而定，可能有多个解，也可能无解。变分表述并不普遍承诺：一个开头和一个结尾，就能决定唯一且必然的故事。</p>
+<p data-passage="121">关键在于区分一条规律，与一种关于系统如何计算自身行为的说法。涉及整条轨迹的方程，并不意味着粒子在运动前评估了每一条候选路径。\(\delta S=0\) 也不意味着粒子正在对作用量执行梯度下降。驻定性刻画的是运动，而不是一种搜索过程。</p>
+<p data-passage="122">看似预知未来的神秘感，来自我们混淆了两件事：描述中使用的条件，与物理对象必须拥有的信息。</p>
+<h2 data-passage="123" id="knowing-the-ending-zh-CN"><span aria-hidden="true" class="section-number">07</span>知道结局以后</h2>
+<p data-passage="124">现在，我们可以回到最初的问题。</p>
+<p data-passage="125">光知道自己要去哪里吗？</p>
+<p data-passage="126">整个推导都不要求它知道。我们找到了描述一条路径的两种方式。一种在局部跟随运动，将某一点发生的事与邻近的事联系起来；另一种考察完整轨迹，询问当它发生形变时，会有什么变化。</p>
+<p data-passage="127">在我们所用的假设下，驻定作用量条件与局部运动方程表达的是同一种动力学：</p>
+<div class="equation" data-passage="128">\[
+\delta S[q]=0
+\qquad\Longleftrightarrow\qquad
+\frac{d}{dt}\left(\frac{\partial L}{\partial\dot q}\right)
+-
+\frac{\partial L}{\partial q}
+=0.
+\]</div>
+<p data-passage="129">终点没有向过去发送消息。我们改变的是描述运动的方式，而不是粒子运动的时间方向。</p>
+<p data-passage="130">这个方程<em>没有</em>说出的东西，同样值得留意。</p>
+<p data-passage="131">熟悉的「最小作用量」一词，很容易让我们想象自然在寻找最好的路线。但我们推导出的条件是驻定，而不一定是最小。一个微小且允许的形变，不会引起作用量的一阶变化。仅凭这一点，我们还不能判断邻近路径的作用量究竟更大还是更小。</p>
+<p data-passage="132">即便作用量取到了最小值，它也不是幸福、痛苦或一段旅程价值的度量。数学没有给我们任何理由，将最小值称作幸运，或将最大值称作悲剧。</p>
+<p data-passage="133">在这里，姜的故事把问题带回了人的尺度。</p>
+<p data-passage="134">露易丝的人生不是一道力学题。没有一个给定的泛函，能为她将要爱上的一切、将要失去的一切，分配恰当的权重。知道人生的形状，并不会自动提供一种计算，告诉她这一生是否值得经历。</p>
+<p data-passage="135">然而，看见整体与走过其中各个部分，依然是两件不同的事。</p>
+<p data-passage="136">从外部看，一段轨迹可以被表示为一条曲线。从内部看，时间依然从此刻走向下一刻。看见终点，不会让中间的点消失。知道某件事终将结束，也不意味着它已经被经历过。</p>
+<p data-passage="137">故事同时容纳了这两种视角，却没有让任何一种变得轻松。露易丝知道，而她依然选择。选择没有消除她预见的痛苦；痛苦也没有抹去其中的喜悦。</p>
+<p data-passage="138">也许，这正是变分原理的语言与这个故事如此契合的原因。它让我们可以询问一整个生命的形状，却不必假装答案一定是更好的结局、更短的路线，或更少的失去。</p>
+<p data-passage="139">数学问题已经变成了个人的问题，而推导无法再带我们向前：</p>
+<blockquote data-passage="140">
+<p>我从一开始就知道结局。我选择了自己要走的路，也正是我注定要走的那条路。我沿着它走下去，满怀喜悦，也或许满怀痛苦。我的未来——是最小化，还是最大化？</p>
+</blockquote>
+  <div class="article-end" aria-hidden="true">· · ·</div>
+  </article>
+</div>
+<footer class="journal-footer article-footer"><a href="../blog.html" data-article-link><span data-lang="en" lang="en">← All essays</span><span data-lang="zh-CN" lang="zh-CN" hidden>← 全部文章</span></a><a href="#top"><span data-lang="en" lang="en">Back to top ↑</span><span data-lang="zh-CN" lang="zh-CN" hidden>回到顶部 ↑</span></a></footer>
+</main>
+</body>
+</html>

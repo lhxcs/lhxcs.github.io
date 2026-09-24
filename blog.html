@@ -1,95 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script type="text/javascript">
-//<![CDATA[
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Essays on physics, mathematics, and the ideas that connect them.">
+<meta name="color-scheme" content="light dark">
+<title>Blog — Hanxuan Li</title>
+<script>
 (function () {
-	"use strict";
-	var KEY = "site-theme";
-	var html = document.documentElement;
-	var stored = null;
-	try {
-		stored = localStorage.getItem(KEY);
-	} catch (e1) {}
-	var prefersDark = false;
-	try {
-		prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-	} catch (e2) {}
-	var theme =
-		stored === "light" || stored === "dark" ? stored : "light";
-	html.setAttribute("data-theme", theme);
+  var theme = "light";
+  try { if (localStorage.getItem("site-theme") === "dark") theme = "dark"; } catch (error) {}
+  document.documentElement.dataset.theme = theme;
 })();
-//]]>
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Noto+Serif+SC:wght@400;600&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>Blog &mdash; Hanxuan Li</title>
-<link rel="icon" href="images/photo.jpg" type="image/jpeg" />
-<link rel="apple-touch-icon" href="images/photo.jpg" />
+<link rel="stylesheet" href="jemdoc.css">
+<link rel="stylesheet" href="blog.css">
+<link rel="icon" href="images/photo.jpg" type="image/jpeg">
+<script defer src="blog.js"></script>
 </head>
-<body>
+<body id="top" class="journal-page index-page" data-title-en="Blog — Hanxuan Li" data-title-zh="博客 — Hanxuan Li">
+<a class="skip-link" href="#main"><span data-lang="en" lang="en">Skip to content</span><span data-lang="zh-CN" lang="zh-CN" hidden>跳至正文</span></a>
 <nav class="site-navbar" aria-label="Site">
-<div class="site-navbar-inner">
-<p class="site-navbar-links">
-<a href="index.html">Home</a><span class="nav-delimiter">&middot;</span>
-<a href="pub.html">Publications</a><span class="nav-delimiter">&middot;</span>
-<a href="blog.html" class="current">Blog</a><span class="nav-delimiter">&middot;</span>
-<a href="cv.html">CV</a>
-</p>
-<button type="button" id="theme-toggle" class="theme-toggle" aria-label="切换配色">
+  <div class="site-navbar-inner">
+    <div class="site-navbar-links"><a href="index.html"><span data-lang="en" lang="en">Home</span><span data-lang="zh-CN" lang="zh-CN" hidden>首页</span></a>
+<a href="pub.html"><span data-lang="en" lang="en">Publications</span><span data-lang="zh-CN" lang="zh-CN" hidden>论文</span></a>
+<a href="blog.html" class="current" aria-current="page" data-article-link><span data-lang="en" lang="en">Blog</span><span data-lang="zh-CN" lang="zh-CN" hidden>博客</span></a>
+<a href="cv.html"><span data-lang="en" lang="en">CV</span><span data-lang="zh-CN" lang="zh-CN" hidden>简历</span></a></div>
+    <div class="reading-controls">
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
 <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
 <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
 </button>
-</div>
+    </div>
+  </div>
 </nav>
-<div class="content">
-<main id="layout-content">
-<div id="toptitle">
-<h1>Blog</h1>
-</div>
-<!-- <p class="footnote-muted">Notes on LLM pretraining, optimization, and architecture.</p> -->
-<ul class="blog-list">
-<li class="blog-empty">No posts yet. Check back soon.</li>
-</ul>
+<main id="main" class="journal-shell">
+  <header class="index-header">
+    <p class="eyebrow"><span data-lang="en" lang="en">Notes &amp; essays</span><span data-lang="zh-CN" lang="zh-CN" hidden>思考与随笔</span></p>
+    <h1><span data-lang="en" lang="en">Blog</span><span data-lang="zh-CN" lang="zh-CN" hidden>博客</span></h1>
+  </header>
+  <ul class="post-list">
+    <li class="post-entry">
+      <a class="post-entry-link" data-article-link href="posts/does-light-know-where-it-is-going.html">
+        <div>
+          <p class="eyebrow"><span data-lang="en" lang="en">01 &nbsp; / &nbsp; Physics &amp; literature</span><span data-lang="zh-CN" lang="zh-CN" hidden>01 &nbsp; / &nbsp; 物理与文学</span></p>
+          <h2><span data-lang="en" lang="en">Does Light Know Where It Is Going?</span><span data-lang="zh-CN" lang="zh-CN" hidden>光知道自己要去哪里吗？</span></h2>
+          <p class="post-summary"><span data-lang="en" lang="en">Reading Ted Chiang’s <em>Story of Your Life</em> led me from the way we make choices to the mathematics of entire paths. A derivation of the calculus of variations, and a return to the lives we understand one moment at a time.</span><span data-lang="zh-CN" lang="zh-CN" hidden>从特德·姜的《你一生的故事》走向变分法。关于光、路径的形状，以及知道结局之后，选择的意义。</span></p>
+          <div class="post-meta"><span><span data-lang="en" lang="en">16 min read</span><span data-lang="zh-CN" lang="zh-CN" hidden>约 16 分钟</span></span><span class="read-link"><span data-lang="en" lang="en">Read essay &nbsp;↗</span><span data-lang="zh-CN" lang="zh-CN" hidden>阅读全文 &nbsp;↗</span></span></div>
+        </div>
+        <svg class="post-thumbnail" viewBox="0 0 240 240" fill="none" aria-hidden="true">
+  <path d="M20 120H220" stroke="currentColor" stroke-opacity=".2"/>
+  <path d="M55 65 110 120 180 185M55 65 180 120 180 185" class="alternate-ray" stroke-dasharray="3 5"/>
+  <path d="M55 65 152 120 180 185" stroke="currentColor" stroke-width="1.8"/>
+  <path d="M152 87V153" stroke="currentColor" stroke-opacity=".4" stroke-dasharray="3 4"/>
+  <circle cx="55" cy="65" r="3" fill="currentColor"/><circle cx="152" cy="120" r="3" fill="currentColor"/><circle cx="180" cy="185" r="3" fill="currentColor"/>
+  <g fill="currentColor" font-family="Georgia,serif" font-style="italic" font-size="13"><text x="40" y="57">A</text><text x="188" y="201">B</text><text x="161" y="113">P</text></g>
+</svg>
+      </a>
+    </li>
+  </ul>
+  <footer class="journal-footer"><span>Hanxuan Li</span><span><span data-lang="en" lang="en">A place to think things through.</span><span data-lang="zh-CN" lang="zh-CN" hidden>留一处空间，把问题想清楚。</span></span></footer>
 </main>
-</div>
-<script type="text/javascript">
-//<![CDATA[
-(function () {
-	"use strict";
-	var KEY = "site-theme";
-	var html = document.documentElement;
-	var btn = document.getElementById("theme-toggle");
-	if (!btn) {
-		return;
-	}
-	function setAria() {
-		var dark = html.getAttribute("data-theme") === "dark";
-		btn.setAttribute("aria-label", dark ? "切换到浅色模式" : "切换到深色模式");
-	}
-	function setTheme(theme) {
-		if (theme !== "light" && theme !== "dark") {
-			return;
-		}
-		html.setAttribute("data-theme", theme);
-		try {
-			localStorage.setItem(KEY, theme);
-		} catch (e) {}
-		setAria();
-	}
-	btn.addEventListener("click", function () {
-		var next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
-		setTheme(next);
-	});
-	setAria();
-})();
-//]]>
-</script>
 </body>
 </html>
