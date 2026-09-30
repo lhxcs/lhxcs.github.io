@@ -355,6 +355,30 @@ pre {
 	margin: 0;
 }
 
+.site-footer {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	border-top: 1px solid var(--border);
+	margin-top: 3rem;
+	padding-top: 1rem;
+	color: var(--text-muted);
+	font: 400 0.8rem/1.6 var(--font-sans);
+}
+
+.view-count {
+	white-space: nowrap;
+}
+
+.view-count-value {
+	font-variant-numeric: tabular-nums;
+}
+
+.view-count-separator {
+	margin-right: 0.75rem;
+}
+
 div#footer {
 	font-size: 0.875rem;
 	font-family: var(--font-sans);
