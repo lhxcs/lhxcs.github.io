@@ -78,7 +78,7 @@ html[data-theme="dark"] .journal-page {
 .post-entry .read-link { margin-left: auto; color: var(--accent); }
 .post-thumbnail { color: var(--accent); background: var(--figure-bg); border-radius: 50%; width: 15rem; height: 15rem; }
 .post-thumbnail .alternate-ray { stroke: var(--text-muted); opacity: .3; }
-.journal-footer { border-top: 1px solid var(--border); margin-top: 4rem; padding-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font: 400 .8rem/1.6 var(--font-sans); color: var(--text-muted); }
+.journal-footer { border-top: 1px solid var(--border); margin-top: 4rem; padding-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; font: 400 .8rem/1.6 var(--font-sans); color: var(--text-muted); }
 .index-page .journal-footer { border: 0; margin-top: 6rem; }
 .article-shell { max-width: 44rem; }
 .article-header { margin: 0 0 3rem; }
@@ -153,6 +153,8 @@ html[data-theme="dark"] .journal-page {
   .equation { font-size: .91em; }
   .article-body:lang(zh-CN) { font-size: 1rem; }
   .journal-footer { font-size: .75rem; }
+  .index-page .journal-footer { flex-direction: column; gap: .75rem; text-align: center; }
+  .article-footer .site-view-count { order: 1; flex-basis: 100%; text-align: center; }
 }
 
 @media (max-width: 370px) {
