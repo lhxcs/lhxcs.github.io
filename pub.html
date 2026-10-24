@@ -40,7 +40,6 @@
 <p class="site-navbar-links">
 <a href="index.html">Home</a><span class="nav-delimiter">&middot;</span>
 <a href="pub.html" class="current">Publications</a><span class="nav-delimiter">&middot;</span>
-<a href="blog.html">Blog</a><span class="nav-delimiter">&middot;</span>
 <a href="cv.html">CV</a>
 </p>
 <button type="button" id="theme-toggle" class="theme-toggle" aria-label="切换配色">
@@ -56,15 +55,13 @@
 </div>
 <p><span class="preserve-space">(* denotes equal contribution, &dagger; denotes corresponding author)</span></p>
 <div class="boxed">
-<table class="imgtable"><tr><td>
-<img src="images/paper/dvd_quant.png" alt="DVD-Quant teaser" width="300px" height="200px" />&nbsp;</td>
-<td align="left"><p><a href="https://arxiv.org/abs/2505.18663"><b>DVD-Quant: Data-free Video Diffusion Transformers Quantization</b></a>
+<table class="imgtable"><tr><td align="left"><p><a href="https://arxiv.org/abs/2610.31574"><b>Rethinking Sequence Compression with Test-time Regression</b></a>
 <br />
-Zhiteng Li*, <b>Hanxuan Li</b>*, Junyi Wu, Kai Liu, Linghe Kong, Guihai Chen, Yulun Zhang, Xiaokang Yang
+Sihan Yang, Jie Huang, <b>Hanxuan Li</b>, Yifan Guo, Weigao Sun, Yiran Zhong, Weiyang Liu&dagger;
 <br />
-<i>ICLR 2026</i>
+<i>arXiv 2026</i>
 <br />
-tl;dr: We develop the first data-free quantization framework that achieves W4A4 PTQ for Video DiTs with 2&times; speedup while maintaining visual fidelity.</p>
+tl;dr: TTR-Compressor uses test-time regression to compress tokens. For sparse attention, it improves retrieval accuracy; for visual token merging, it matches the standard MLP merger's performance with 55.6% fewer tokens.</p>
 </td></tr></table>
 </div>
 <div class="boxed">
@@ -75,6 +72,16 @@ Kexuan Shi*, <b>Hanxuan Li</b>*, Zeju Qiu, Yandong Wen, Simon Buchholz, Weiyang 
 <i>NeurIPS 2026</i> 
 <br />
 tl;dr: A spectrum-preserving optimizer that updates each weight matrix via left and right orthogonal transformations, keeping singular values fixed while modulating geometry; competitive for LLM pretraining and finetuning.</p>
+</td></tr></table>
+</div>
+<div class="boxed">
+<table class="imgtable"><tr><td align="left"><p><a href="https://arxiv.org/abs/2505.18663"><b>DVD-Quant: Data-free Video Diffusion Transformers Quantization</b></a>
+<br />
+Zhiteng Li*, <b>Hanxuan Li</b>*, Junyi Wu, Kai Liu, Linghe Kong, Guihai Chen, Yulun Zhang, Xiaokang Yang
+<br />
+<i>ICLR 2026</i>
+<br />
+tl;dr: We develop the first data-free quantization framework that achieves W4A4 PTQ for Video DiTs with 2&times; speedup while maintaining visual fidelity.</p>
 </td></tr></table>
 </div>
 </main>
